@@ -1,0 +1,190 @@
+/* Grid + Card */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* Tablet: exactly two columns (768px–1024px, per the project breakpoints) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile: single column below 768px */
+@media (max-width: 767px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 26px rgba(43, 35, 24, 0.1); }
+
+.cardImageLink { display: block; position: relative; }
+.cardImage { width: 100%; height: 150px; object-fit: cover; display: block; }
+
+.cardImageHint {
+  position: absolute;
+  inset: 0;
+  background: rgba(43, 35, 24, 0.45);
+  color: #fffbf2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.favButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(253, 251, 243, 0.9);
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.favButtonActive { color: var(--berry); }
+
+.cardBody { padding: 14px 16px 16px; }
+.cardTitleLink { text-decoration: none; color: inherit; }
+.cardTitle { font-size: 1.02rem; font-weight: 600; margin: 0 0 3px; line-height: 1.3; }
+.cardCuisine { font-size: 0.78rem; font-weight: 600; margin: 0 0 10px; }
+
+.cardMeta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+/* Filters */
+.filterBar {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 26px;
+}
+.filterGroup { display: flex; flex-direction: column; gap: 6px; }
+.filterLabel { font-size: 0.75rem; font-weight: 600; color: var(--ink-soft); }
+.filterGroup select {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--ink);
+}
+.chipRow { display: flex; gap: 6px; flex-wrap: wrap; max-width: 480px; }
+.chip {
+  border: 1px solid var(--line);
+  background: transparent;
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--ink);
+}
+.clearButton {
+  background: none;
+  border: none;
+  color: var(--berry);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  padding-bottom: 8px;
+}
+
+/* Detail */
+.backLink {
+  background: none;
+  border: none;
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.detailHero {
+  display: flex;
+  gap: 24px;
+  padding: 22px;
+  border-radius: 18px;
+  flex-wrap: wrap;
+}
+.detailImage {
+  width: 280px;
+  height: 184px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+.detailInfo { flex: 1; min-width: 240px; }
+.detailInfo .cardMeta { margin: 12px 0 14px; font-size: 0.85rem; }
+
+.favButtonLarge {
+  border: 1px solid var(--line);
+  background: var(--card-bg);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--ink);
+}
+.favButtonLarge.favButtonActive { border-color: var(--berry); color: var(--berry); }
+
+.detailBody {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.ingredientList { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 10px; }
+.ingredientList li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; cursor: pointer; }
+.ingredientDone { color: var(--ink-soft); text-decoration: line-through; }
+.checkbox {
+  width: 18px; height: 18px; border-radius: 5px;
+  border: 1.5px solid var(--line); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; color: #fff; background: var(--card-bg);
+}
+.ingredientDone .checkbox { background: var(--olive); border-color: var(--olive); }
+
+.planPicker { display: flex; gap: 8px; flex-wrap: wrap; }
+.planPicker select {
+  padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--card-bg); font-size: 0.85rem;
+}
+.confirmText { margin-top: 10px; font-size: 0.85rem; color: var(--olive-deep); font-weight: 600; }
+
+.stepList { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.stepList li { display: flex; gap: 14px; }
+.stepList p { margin: 0; font-size: 0.92rem; line-height: 1.6; }
+.stepNum {
+  width: 26px; height: 26px; border-radius: 50%; background: var(--olive); color: #fffbf2;
+  font-size: 0.78rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .detailBody { grid-template-columns: 1fr; }
+  .detailImage { width: 100%; height: 200px; }
+}

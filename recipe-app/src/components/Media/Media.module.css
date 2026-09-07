@@ -1,0 +1,38 @@
+.videoContainer,
+.audioContainer {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.mediaTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  font-family: var(--font-sans);
+}
+
+.videoFrame {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #14110b;
+}
+
+.videoFrame video { display: block; }
+
+.audioContainer audio { width: 100%; }
+
+.mediaButton {
+  margin-top: 10px;
+  background: var(--olive);
+  color: #fffbf2;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mediaButton:hover { opacity: 0.9; }

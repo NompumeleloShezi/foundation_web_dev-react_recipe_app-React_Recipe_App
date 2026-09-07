@@ -1,0 +1,22 @@
+.header {
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 8px 0 0;
+  max-width: 62ch;
+}
+
+.footer {
+  background: var(--olive-light);
+  border-top: 1px solid var(--line);
+  color: var(--olive-deep);
+  text-align: center;
+  padding: 22px 20px;
+  font-size: 0.8rem;
+}
+
+.footer p { margin: 2px 0; }
+.footerMeta { color: var(--ink-soft); font-size: 0.72rem; }

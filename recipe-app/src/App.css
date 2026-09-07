@@ -1,0 +1,116 @@
+/*
+ * Fonts: deliberately system-stack only (no external @import). A capstone
+ * project shouldn't have its rendering — or its "zero console errors"
+ * requirement — depend on a third-party CDN being reachable. These stacks
+ * still give a distinct serif/sans pairing (editorial serif for headings,
+ * neutral grotesk for body) using fonts already on the user's device.
+ */
+:root {
+  --font-serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Warm & Gentle: a softened herb-green + warm cream base, restoring a
+     distinctly "food" identity (olive, terracotta) but at lower
+     saturation than the original — a middle point between the punchy
+     olive/saffron opening palette and the sage/blush pastel version. */
+  --paper: #f6efe3;
+  --paper-deep: #ede0cc;
+  --card-bg: #fffcf6;
+  --ink: #3a3226;
+  --ink-soft: #8c816f;
+  --line: #e3d6be;
+  --olive-light: #e2e7cf;
+  --olive: #7c8f5c;
+  --olive-deep: #55643c;
+  --accent: #dd8a61;
+  --berry: #a85d52;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  margin: 0;
+}
+
+a { color: inherit; }
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 12px;
+  background: var(--olive-deep);
+  color: #fffcfa;
+  padding: 10px 16px;
+  border-radius: 8px;
+  z-index: 200;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: top 0.15s ease;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.page-eyebrow {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 0 0 4px;
+}
+
+.page-title {
+  font-size: 1.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 16px;
+  color: var(--ink-soft);
+}
+
+.empty-state h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .app-main { padding: 28px 32px 60px; }
+}
+
+@media (max-width: 640px) {
+  .app-main { padding: 20px 16px 90px; }
+  .page-title { font-size: 1.5rem; }
+}

@@ -1,0 +1,108 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: var(--olive-light);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.brandMark { font-size: 22px; }
+
+.brandName {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.links {
+  display: flex;
+  gap: 6px;
+}
+
+.links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--olive-deep);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.links a:hover { background: rgba(82, 104, 75, 0.1); }
+
+.active {
+  background: var(--accent) !important;
+  color: var(--ink) !important;
+}
+
+.badge {
+  background: var(--berry);
+  color: #fffcfa;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  padding: 1px 7px;
+  font-weight: 700;
+}
+
+.active .badge { background: var(--olive-deep); color: #fffcfa; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--olive-deep);
+  border-radius: 2px;
+}
+
+@media (max-width: 760px) {
+  .hamburger { display: flex; }
+
+  .links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--olive-light);
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    padding: 8px 16px 16px;
+    display: none;
+  }
+
+  .linksOpen { display: flex; }
+
+  .links a { padding: 12px 10px; }
+}
